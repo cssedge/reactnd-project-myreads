@@ -1,4 +1,6 @@
-html, body, .root {
+html,
+body,
+.root {
   height: 100%;
 }
 
@@ -6,7 +8,8 @@ body {
   line-height: 1.5;
 }
 
-body, .app {
+body,
+.app {
   background: white;
 }
 
@@ -16,12 +19,25 @@ body, .app {
   padding: 10px 0;
   background: #2e7c31;
   text-align: center;
+
+  /* background-image: url(./images/illustrations.png) repat-x;
+  background-size: cover; */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .list-books-title h1 {
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 2.2rem;
   margin: 0;
   color: white;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.list-books-title h1 a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .list-books-content {
@@ -31,11 +47,29 @@ body, .app {
 
 .bookshelf {
   padding: 0 10px 20px;
+  margin-bottom: 3rem;
 }
 
 @media (min-width: 600px) {
   .bookshelf {
     padding: 0 20px 40px;
+    position: relative;
+  }
+
+  .bookshelf-title {
+    position: absolute;
+    bottom: 2rem;
+    left: 7%;
+    background: none;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+    border-bottom: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: none !important;
+    color: #2e7c31;
+    text-shadow: -4px 4px 2px rgb(46 124 49 / 20%);
+    text-transform: none;
   }
 }
 
@@ -45,6 +79,7 @@ body, .app {
 
 .bookshelf-books {
   text-align: center;
+  padding-left: 10%;
 }
 
 .open-search {
@@ -59,30 +94,30 @@ body, .app {
   height: 50px;
   border-radius: 50%;
   background: #2e7d32;
-  background-image: url('./icons/add.svg');
+  background-image: url("./icons/add.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-size: 0;
   outline: 0;
+  cursor: pointer;
 }
 
 .open-search button:hover {
   background-color: rgb(0, 102, 0);
 }
 
-
 /* search page */
 
 .search-books-bar {
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 100px;
   left: 0;
   z-index: 5;
   display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
 
 .search-books-input-wrapper {
@@ -104,13 +139,14 @@ body, .app {
   left: 15px;
   width: 50px;
   height: 53px;
-  background-image: url('./icons/arrow-back.svg');
+  background-image: url("./icons/arrow-back.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 28px;
   font-size: 0;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 button:active {
@@ -121,9 +157,19 @@ button:active {
 .search-books-results {
   padding: 80px 10px 20px;
 }
-
+.search-books-results .books-grid {
+  max-height: none;
+}
 /* books grid */
-
+.emptyShelf {
+  align-self: flex-end;
+  font-weight: bold;
+  font-style: italic;
+  color: #708698;
+}
+.emptySearch {
+  text-align: center;
+}
 .books-grid {
   list-style-type: none;
   padding: 0;
@@ -131,6 +177,10 @@ button:active {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  min-height: 240px;
+  max-height: 330px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
 }
 
 .books-grid li {
@@ -145,6 +195,18 @@ button:active {
 .book-title,
 .book-authors {
   font-size: 0.8em;
+}
+.book-title {
+  font-weight: 600;
+}
+ul.book-authors {
+  padding-left: 0;
+}
+ul.book-authors li {
+  list-style: none;
+  font-style: italic;
+  font-weight: 600;
+  padding: 0;
 }
 
 .book-title {
@@ -170,11 +232,11 @@ button:active {
   height: 40px;
   border-radius: 50%;
   background: #60ac5d;
-  background-image: url('./icons/arrow-drop-down.svg');
+  background-image: url("./icons/arrow-drop-down.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .book-shelf-changer select {
@@ -187,7 +249,7 @@ button:active {
 /* book cover */
 
 .book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background: #eee;
 }
 
@@ -195,4 +257,137 @@ button:active {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+/* ======================= BookShelf Effect */
+.shelf {
+  display: block;
+  position: relative;
+  width: 90%;
+  height: 20px;
+  margin: 0px auto 0;
+  background-image: -moz-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /*FF3.6+ */
+  background-image: -webkit-gradient(
+    90deg,
+    left top,
+    right bottom,
+    color-stop(0%, #d1d8de),
+    color-stop(100%, #eff1f3)
+  );
+  /*Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /*Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /*IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff1f3', endColorstr='#d1d8de', GradientType='0' );
+  /* IE6-9 */
+  box-shadow: 0 10px 1px #708698, 0 14px 0 #abb8c3, 0 20px 30px -8px #000000,
+    transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;
+}
+.bookend_left {
+  display: block;
+  position: absolute;
+  left: -25px;
+  top: -18px;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+}
+.bookend_left:before {
+  position: absolute;
+  top: 31px;
+  left: 17px;
+  width: 20px;
+  height: 10px;
+  background-color: #ffffff;
+  content: "";
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+}
+.bookend_right {
+  display: block;
+  position: absolute;
+  right: -25px;
+  top: -18px;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+}
+.bookend_right:before {
+  position: absolute;
+  top: 31px;
+  right: 17px;
+  width: 20px;
+  height: 10px;
+  background-color: #ffffff;
+  content: "";
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+}
+.shelf .reflection {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 1px;
+  width: 99.8%;
+  height: 1px;
+  background-image: -moz-linear-gradient(
+    0deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.5) 35%,
+    #ffffff 65%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  /*FF3.6+ */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0%, #ffffff),
+    color-stop(35%, rgba(255, 255, 255, 0.5)),
+    color-stop(65%, #ffffff),
+    color-stop(100%, rgba(255, 255, 255, 0.7))
+  );
+  /*Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(
+    0deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.5) 35%,
+    #ffffff 65%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(
+    0deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.5) 35%,
+    #ffffff 65%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(
+    0deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.5) 35%,
+    #ffffff 65%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  /*IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(255, 255, 255, 0.7)', endColorstr='#ffffff', GradientType='0' );
+  /* IE6-9 */
 }
