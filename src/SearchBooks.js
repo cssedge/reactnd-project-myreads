@@ -52,7 +52,7 @@ export default class SearchBooks extends Component {
                 */}
             <input
               type="text"
-              placeholder="Search by title or author"
+              placeholder="Search by topic, ex: linux, javascript"
               value={this.state.inputTxt}
               onChange={this.handleInput}
             />
