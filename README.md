@@ -4,6 +4,8 @@
 
 MyReads is a home library web applications to store and categorize your books on virtual shelves so it's easier to arrange and manage.
 
+## Live preview
+* Built version can be found at:  [**Sultan-Reads**](https://sultan-myreads.pages.dev)
 
 ## Installation
 * install all project dependencies with `npm install`
