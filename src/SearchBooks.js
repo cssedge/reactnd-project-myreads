@@ -91,7 +91,7 @@ export default class SearchBooks extends Component {
             ) : (
               <p className="emptyShelf emptySearch">
                 No Books found! <br />
-                Use search bar to find your favourite books...
+                Use search bar to find your favourite books...ex: react, android, ...etc
               </p>
             )}
           </ol>
