@@ -1,6 +1,6 @@
 {
-  "homepage": "https://github.com/cssedge/reactnd-project-myreads",
-  "name": "myreads-app",
+  "homepage": "https://sultan-myreads.pages.dev",
+  "name": "sultan-myreads-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
